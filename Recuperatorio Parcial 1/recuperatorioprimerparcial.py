@@ -79,7 +79,7 @@ while opcion_elegida != 6:
         if not encontrado:
             print("Producto no encontrado.")
 
-    # Opción 6: Salir del programa6
+    # Opción 6: Salir del programa
     elif opcion_elegida == 6:
         print("Saliendo del programa")
     
