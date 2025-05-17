@@ -6,14 +6,15 @@ cantidades=[100, 20, 30,0]
 opcion_elegida = 0
 
 # Bucle principal: se repite hasta que el usuario elija la opción 5 (salir)
-while opcion_elegida != 5:
+while opcion_elegida != 6:
      # Mostrar el menú de opciones
     print("Menu de opciones: ")
     print("1.Agregar producto")
     print("2.Ver productos agotados")
     print("3.Actualizar el stock")
     print("4.Ver todos los productos")
-    print("5.Salir")
+    print("5.Consultar stock de un producto")
+    print("6.Salir")
     # Variable para verificar si hay productos agotados
     agotados=False
 
@@ -65,9 +66,23 @@ while opcion_elegida != 5:
                 print("- " + nombres[i] + ": " + str(cantidades[i]) + " unidades")
                 i += 1
 
-    # 5. Salir del programa
+     # Opciónn 5: Consultar el stock de un producto específico
     elif opcion_elegida == 5:
+        consulta = input("Ingrese el nombre del producto que desea consultar: ")
+        encontrado = False
+        i = 0
+        while i < len(nombres):
+            if nombres[i].lower() == consulta.lower():
+                print("El stock de '" + nombres[i] + "' es: " + str(cantidades[i]) + " unidades")
+                encontrado = True
+            i += 1
+        if not encontrado:
+            print("Producto no encontrado.")
+
+    # Opción 6: Salir del programa6
+    elif opcion_elegida == 6:
         print("Saliendo del programa")
+    
    # Si el usuario ingresa una opción inválida
     else:
         print("Opción no válida. Intente nuevamente.")
